@@ -4,17 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/productsInfo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"
@@ -29,42 +38,50 @@
                 android:text="Product general information:"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText" />
 
             <EditText
-                android:id="@+id/edName"
+                android:id="@+id/productName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:hint="Name"
-                android:layout_marginTop="10dp"/>
-
-
-            <EditText
-                android:id="@+id/edCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Category"/>
+                android:inputType="text"
+                android:layout_marginTop="10dp"
+                tools:ignore="Autofill,HardcodedText" />
 
             <EditText
-                android:id="@+id/edDescription"
+                android:id="@+id/productCategory"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:hint="Category"
+                android:inputType="text"
+                tools:ignore="Autofill,HardcodedText" />
+
+            <EditText
+                android:id="@+id/productDescription"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="text"
                 android:hint="Product description (Optional)"
-                />
+                tools:ignore="Autofill,HardcodedText" />
 
             <EditText
-                android:id="@+id/edPrice"
+                android:id="@+id/productPrice"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:hint="Price"
-                android:inputType="number"/>
+                android:inputType="number"
+                tools:ignore="Autofill,HardcodedText" />
 
             <EditText
                 android:id="@+id/offerPercentage"
+                android:maxWidth="488dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:hint="Offer Percentage (Optional)"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"
+                tools:ignore="Autofill,HardcodedText" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -84,14 +101,16 @@
                 android:text="Product details:"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText"/>
 
             <EditText
-                android:id="@+id/edSizes"
+                android:id="@+id/productSizes"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:hint="Sizes (Optional) | use , between each new size"
-                android:inputType="number"/>
+                android:inputType="text"
+                tools:ignore="Autofill,HardcodedText" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -103,9 +122,10 @@
                     android:layout_height="wrap_content"
                     android:text="Colors"
                     android:textSize="14sp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText" />
                 <TextView
-                    android:id="@+id/tvSelectedColors"
+                    android:id="@+id/productSelectedColors"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="14sp"
@@ -123,7 +143,8 @@
                     android:layout_height="wrap_content"
                     android:text="Images"
                     android:textSize="14sp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText"/>
                 <TextView
                     android:id="@+id/tvSelectedImages"
                     android:layout_width="wrap_content"
